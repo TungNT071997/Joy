@@ -29,8 +29,10 @@
   list-style: none;
   margin: 20px;
 }
-.list-menu ul li {
+.list-menu ul li a {
   margin: 20px;
+  text-decoration: none;
+  color: black;
 }
 .contact {
   font-size: inherit;

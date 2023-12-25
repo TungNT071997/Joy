@@ -1,20 +1,24 @@
-import Header from "./Layouts/component/Header/Header";
-import { Fragment } from "react";
-import publicRoutes from "./routes";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-function App() {
+import Header from './Layouts/component/Header/Header';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home';
+import Makeup from './Pages/Makup';
+import Price from './Pages/Price';
+import WeddingDresses from './Pages/WeddingDresses';
+import Hero from './Layouts/component/Hero/Hero';
+
+const App = () => {
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          {publicRoutes.map((route, index) => {
-            let Page = route.component;
-            return <Route key={index} path={route.path} element={<Page />} />;
-          })}
-        </Routes>
-      </div>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/makeup" element={<Makeup />} />
+        <Route path="/price-list" element={<Price />} />
+        <Route path="/wedding-dresses" element={<WeddingDresses />} />
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;
